@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x3058;&#x3083;&#x3093;&#x3051;&#x3093;&#x30b2;&#x30fc;&#x30e0;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="じゃんけんゲーム">じゃんけんゲーム</h1>
+<p>初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。</p>
+<h2 id="目次">目次</h2>
+<ol>
+<li><a href="Jindex.html">初めに</a></li>
+<li><a href="JMakeProject.html">プロジェクト作成</a></li>
+<li><a href="Scene.html">画面遷移作成</a></li>
+<li><a href="Menu.html">メニュー画面作成</a></li>
+<li><a href="Game.html">ゲーム画面作成</a></li>
+<li><a href="Final.html">最後に</a></li>
+</ol>
+<hr>
+<h3 id="メニュー画面作成">メニュー画面作成</h3>
+<hr>
+<ol>
+<li>ソースファイルを右クリックで新しい項目を選択</li>
+<li>C++ファイルを選択</li>
+<li>名前<code>Menu.cpp</code></li>
+<li>ヘッダーファイルを右クリックで新しい項目を選択</li>
+<li>ヘッダーファイルを選択</li>
+<li>名前<code>Menu.h</code></li>
+</ol>
+<h3 id="コーディング">コーディング</h3>
+<hr>
+<h4 id="menuh">Menu.h</h4>
+ <details open><summary>Menu.h</summary>
+<pre><code class="language-h"><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> once</span>
+
+<span class="hljs-type">void</span> <span class="hljs-title function_">Menu_Initialize</span><span class="hljs-params">()</span>;	<span class="hljs-comment">//初期化</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">Menu_Finalize</span><span class="hljs-params">()</span>;	<span class="hljs-comment">//終了処理</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">Menu_Update</span><span class="hljs-params">()</span>;		<span class="hljs-comment">//更新</span>
+<span class="hljs-type">void</span> <span class="hljs-title function_">Menu_Draw</span><span class="hljs-params">()</span>;		<span class="hljs-comment">//描画</span>
+</code></pre>
+<h4 id="menucpp">Menu.cpp</h4>
+ <details open><summary>Menu.cpp</summary>
+<pre><code class="language-cpp"> <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;DxLib.h&quot;</span></span>
+ <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Menu.h&quot;</span></span>
+ <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;SceneMgr.h&quot;</span></span>
+ <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Input.h&quot;</span></span>
+
+ <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Menu_Initialize</span><span class="hljs-params">()</span> </span>{
+
+ }  
+
+ <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Menu_Finalize</span><span class="hljs-params">()</span> </span>{
+
+ }
+
+ <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Menu_Update</span><span class="hljs-params">()</span></span>{
+   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">CheckHitKey</span>(KEY_INPUT_SPACE)) {
+   	<span class="hljs-built_in">SceneMgr_ChangeScene</span>(eScene_Game);
+   }
+ }
+
+ <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Menu_Draw</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-built_in">SetFontSize</span>(<span class="hljs-number">50</span>);
+   <span class="hljs-built_in">DrawString</span>(mgr.SCREEN_WIDTH/<span class="hljs-number">2</span>- <span class="hljs-number">120</span>, mgr.SCREEN_HEIGHT/<span class="hljs-number">2</span> - <span class="hljs-number">50</span>, <span class="hljs-string">&quot; SPASEキー\nゲーム開始&quot;</span>, <span class="hljs-number">0xffffff</span>);
+ }
+</code></pre>
+<h3 id="コード説明">コード説明</h3>
+<h4 id="menucpp-1">Menu.cpp</h4>
+<pre><code class="language-cpp"> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">CheckHitKey</span>(KEY_INPUT_SPACE)) {
+	<span class="hljs-built_in">SceneMgr_ChangeScene</span>(eScene_Game);
+ }
+</code></pre>
+<ol>
+<li>ESCキーを押したらif文の処理を実行</li>
+<li>現在シーンから<code>eScene_Game</code>に変更</li>
+</ol>
+<pre><code class="language-cpp"><span class="hljs-built_in">SetFontSize</span>(<span class="hljs-number">50</span>);
+</code></pre>
+<p>描画する文字のサイズを50に設定</p>
+<pre><code class="language-cpp"><span class="hljs-built_in">DrawString</span>(mgr.SCREEN_WIDTH/<span class="hljs-number">2</span>- <span class="hljs-number">120</span>, mgr.SCREEN_HEIGHT/<span class="hljs-number">2</span> - <span class="hljs-number">50</span>, <span class="hljs-string">&quot; SPASEキー\nゲーム開始&quot;</span>, <span class="hljs-number">0xffffff</span>);
+</code></pre>
+<p>DxLibでの文字を描画させる方法</p>
+<ul>
+<li><code>DrawString(x座標, Y座標, 描画文字, 文字色)</code></li>
+</ul>
+<h3 id="scenemgrcpp更新">SceneMgr.cpp更新</h3>
+<h4 id="scenemgrcpp">SceneMgr.cpp</h4>
+<details open><summary>Menu.cpp</summary>
+<pre><code class="language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;DxLib.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;SceneMgr.h&quot;</span></span>
+<span class="hljs-comment">//#include &quot;Game.h&quot;</span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Menu.h&quot;</span></span>
+
+<span class="hljs-type">static</span> eScene mScene = eScene_Menu;		<span class="hljs-comment">//シーン管理変数(デバッグでゲーム開始)</span>
+<span class="hljs-type">static</span> eScene mNextScene = eScene_None; <span class="hljs-comment">//次のシーン管理変数</span>
+
+<span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_InitializeModule</span><span class="hljs-params">(eScene scene)</span></span>;<span class="hljs-comment">//指定モジュールを初期化する</span>
+<span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_FinalizeModule</span><span class="hljs-params">(eScene scene)</span></span>;	<span class="hljs-comment">//指定モジュールの終了処理を行う</span>
+<span class="hljs-comment">/******************************
+* 初期化処理
+*******************************/</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_Initialize</span><span class="hljs-params">()</span> </span>{
+	<span class="hljs-built_in">SceneMgr_InitializeModule</span>(mScene);
+}
+
+<span class="hljs-comment">/******************************
+* 終了処理
+*******************************/</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_Finalize</span><span class="hljs-params">()</span> </span>{
+	<span class="hljs-built_in">SceneMgr_FinalizeModule</span>(mScene);
+}
+
+<span class="hljs-comment">/******************************
+* 更新処理
+*******************************/</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_Update</span><span class="hljs-params">()</span> </span>{
+	<span class="hljs-keyword">if</span> (mNextScene != eScene_None) {		<span class="hljs-comment">//次のシーンがセットされていたら</span>
+		<span class="hljs-built_in">SceneMgr_FinalizeModule</span>(mScene);	<span class="hljs-comment">//現在のシーンの終了処理を実行</span>
+		mScene = mNextScene;				<span class="hljs-comment">//次のシーンを現在のシーンセット</span>
+		mNextScene = eScene_None;			<span class="hljs-comment">//次のシーン情報をクリア</span>
+		<span class="hljs-built_in">SceneMgr_InitializeModule</span>(mScene);	<span class="hljs-comment">//現在のシーンを初期化</span>
+	}
+	
+	<span class="hljs-keyword">if</span> (<span class="hljs-built_in">CheckHitKey</span>(KEY_INPUT_ESCAPE)) {
+		<span class="hljs-built_in">DxLib_End</span>();
+	}
+	
+    <span class="hljs-keyword">switch</span> (mScene) {
+	<span class="hljs-keyword">case</span> eScene_Menu:		<span class="hljs-comment">//メニュー画面</span>
+		<span class="hljs-built_in">Menu_Update</span>();
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-comment">//case eScene_Game:		//ゲーム画面</span>
+	<span class="hljs-comment">//	Game_Update();</span>
+	<span class="hljs-comment">//	break;</span>
+	}
+}
+
+<span class="hljs-comment">/******************************
+* 描画処理
+*******************************/</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_Draw</span><span class="hljs-params">()</span> </span>{
+	<span class="hljs-built_in">DrawGraph</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, mgr.BackImage, <span class="hljs-literal">false</span>);
+
+	<span class="hljs-keyword">switch</span> (mScene) {
+	<span class="hljs-keyword">case</span> eScene_Menu:
+		<span class="hljs-built_in">Menu_Draw</span>();
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-comment">//case eScene_Game:</span>
+	<span class="hljs-comment">//	Game_Draw();</span>
+	<span class="hljs-comment">//	break;</span>
+	}
+}
+<span class="hljs-comment">/******************************
+* 関数
+*******************************/</span>
+<span class="hljs-comment">// 引数 nextScene にシーンを変更する</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_ChangeScene</span><span class="hljs-params">(eScene NextScene)</span> </span>{
+	mNextScene = NextScene;	<span class="hljs-comment">//次のシーンをセットする</span>
+}
+
+<span class="hljs-comment">// 引数sceneモジュールを初期化する</span>
+<span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_InitializeModule</span><span class="hljs-params">(eScene scene)</span> </span>{
+	<span class="hljs-keyword">switch</span> (scene) { 
+	<span class="hljs-keyword">case</span> eScene_Menu: 
+		<span class="hljs-built_in">Menu_Initialize</span>();
+		mgr.BackImage = <span class="hljs-built_in">LoadGraph</span>(<span class="hljs-string">&quot;images/MenuBack.png&quot;</span>);
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-comment">//case eScene_Game:</span>
+	<span class="hljs-comment">//	Game_Initialize();</span>
+	<span class="hljs-comment">//	break;</span>
+	}
+}
+
+<span class="hljs-comment">// 引数sceneモジュールの終了処理を行う</span>
+<span class="hljs-function"><span class="hljs-type">static</span> <span class="hljs-type">void</span> <span class="hljs-title">SceneMgr_FinalizeModule</span><span class="hljs-params">(eScene scene)</span> </span>{
+	<span class="hljs-keyword">switch</span>(scene) { 
+	<span class="hljs-keyword">case</span> eScene_Menu:
+		<span class="hljs-built_in">Menu_Finalize</span>();
+		<span class="hljs-keyword">break</span>;
+	<span class="hljs-comment">//case eScene_Game:</span>
+	<span class="hljs-comment">//	Game_Finalize();</span>
+	<span class="hljs-comment">//	break;</span>
+	<span class="hljs-comment">//}</span>
+	mgr.BackImage = <span class="hljs-number">0</span>;
+}
+</code></pre>
+</details>
+<h3 id="コード説明-1">コード説明</h3>
+<pre><code class="language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;Menu.h&quot;</span></span>
+</code></pre>
+<p>追加したMenu処理を追加</p>
+<pre><code class="language-cpp"> mgr.BackImage = <span class="hljs-built_in">LoadGraph</span>(<span class="hljs-string">&quot;images/MenuBack.png&quot;</span>);
+</code></pre>
+<p>背景画像変数に画像を格納</p>
+<ul>
+<li><code>LoadGraph(画像URL)</code></li>
+</ul>
+<pre><code class="language-cpp"><span class="hljs-keyword">switch</span> (mScene) {
+	<span class="hljs-keyword">case</span> eScene_Menu: <span class="hljs-comment">//現在の画面がメニュー画面なら</span>
+		<span class="hljs-built_in">Menu_Draw</span>(); 
+		<span class="hljs-keyword">break</span>;
+    <span class="hljs-comment">// case eScene_Game:</span>
+        <span class="hljs-comment">// 	Game_Draw();</span>
+        <span class="hljs-comment">// 	break;</span>
+}
+</code></pre>
+<p>メニュー画面を実行するためにコメントアウトを解除</p>
+<h3 id="実行">実行</h3>
+<p>実行後この画面になっていたら成功
+<img src="file:///d:\Production\Part\Markdown\TextBook\images\DxLib\Janken\Back_Menu.png" alt="実行画面"></p>
+<hr>
+<p><a href="../../index.html">戻る</a></p>
+
+            
+            
+        </body>
+        </html>
