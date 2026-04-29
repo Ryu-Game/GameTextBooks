@@ -5,7 +5,9 @@ AndroidやiOSでも開発はできる<br>
 [DxLib公式サイト](https://dxlib.xsrv.jp/index.html)
 
  ## DxLib開発環境づくり
-  - [環境づくり](../DxLib/MakeProject/1Ddownload.html)
+  - [ダウンロード](../DxLib/MakeProject/1Ddownload.html)
+  - [VisualStudio環境](../DxLib/MakeProject/2Dcreate.html)
+  - [プロジェクト環境](../DxLib/MakeProject/3DMakeProject.html)
 
  ## ゲーム集
   - [じゃんけん](../DxLib/Janken/1Jindex.html)
