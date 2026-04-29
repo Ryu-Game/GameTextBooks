@@ -8,7 +8,7 @@ AndroidやiOSでも開発はできる<br>
   - [環境づくり](../DxLib/MakeProject/1Ddownload.html)
 
  ## ゲーム集
-  - [じゃんけん](../DxLib/Janken/Jindex.html)
+  - [じゃんけん](../DxLib/Janken/1Jindex.html)
   - 無限ドア
 
 ---

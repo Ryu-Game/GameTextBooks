@@ -2,12 +2,12 @@
 初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。
 
 ## 目次
-1. [初めに](Jindex.html)
-2. [プロジェクト作成](JMakeProject.html)
-3. [画面遷移作成](Scene.html)
-4. [メニュー画面作成](Menu.html)
-5. [ゲーム画面作成](Game.html)
-6. [最後に](Final.html)
+1. [初めに](./1Jindex.html)
+2. [プロジェクト作成](./2JMakeProject.html)
+3. [画面遷移作成](./3Scene.html)
+4. [メニュー画面作成](./4Menu.html)
+5. [ゲーム画面作成](./5Game.html)
+6. [最後に](./6Final.html)
 ---
 
 ## プロジェクト作成
@@ -85,4 +85,8 @@ DxLibソフトの初期化<br>
 ゲーム強制終了処理
 
 ---
-[戻る](../../index.html)
+[次へ](./3Scene.html)
+
+[前へ戻る](./1Jindex.html)
+
+[DxLib開発ページへ戻る](../Dindex.html)

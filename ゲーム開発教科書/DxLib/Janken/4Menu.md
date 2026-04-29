@@ -2,12 +2,12 @@
 初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。
 
 ## 目次
-1. [初めに](Jindex.html)
-2. [プロジェクト作成](JMakeProject.html)
-3. [画面遷移作成](Scene.html)
-4. [メニュー画面作成](Menu.html)
-5. [ゲーム画面作成](Game.html)
-6. [最後に](Final.html)
+1. [初めに](./1Jindex.html)
+2. [プロジェクト作成](./2JMakeProject.html)
+3. [画面遷移作成](./3Scene.html)
+4. [メニュー画面作成](./4Menu.html)
+5. [ゲーム画面作成](./5Game.html)
+6. [最後に](./6Final.html)
 ---
 ### メニュー画面作成
 ---
@@ -31,6 +31,7 @@
  void Menu_Update();		//更新
  void Menu_Draw();		//描画
  ```
+ </details>
 
 #### Menu.cpp
  <details open><summary>Menu.cpp</summary>
@@ -60,6 +61,7 @@
 	DrawString(mgr.SCREEN_WIDTH/2- 120, mgr.SCREEN_HEIGHT/2 - 50, " SPASEキー\nゲーム開始", 0xffffff);
   }
 ```
+</details>
 
 ### コード説明
 #### Menu.cpp
@@ -97,6 +99,8 @@ DrawString(mgr.SCREEN_WIDTH/2- 120, mgr.SCREEN_HEIGHT/2 - 50, " SPASEキー\nゲ
 
 static eScene mScene = eScene_Menu;		//シーン管理変数(デバッグでゲーム開始)
 static eScene mNextScene = eScene_None; //次のシーン管理変数
+
+struct SceneMgr mgr;
 
 static void SceneMgr_InitializeModule(eScene scene);//指定モジュールを初期化する
 static void SceneMgr_FinalizeModule(eScene scene);	//指定モジュールの終了処理を行う
@@ -184,7 +188,7 @@ static void SceneMgr_FinalizeModule(eScene scene) {
 	//case eScene_Game:
 	//	Game_Finalize();
 	//	break;
-	//}
+	}
 	mgr.BackImage = 0;
 }
 ```
@@ -217,7 +221,10 @@ switch (mScene) {
 
 ### 実行
 実行後この画面になっていたら成功
-![実行画面](../../images/DxLib/Janken/Back_Menu.png)
-
+<img src="../Janken/images/Back_Menu.png" width="50%">
 ---
-[戻る](../../index.html)
+[次へ](./5Game.html)
+
+[前へ戻る](./3Scene.html)
+
+[DxLib開発ページへ戻る](../Dindex.html)

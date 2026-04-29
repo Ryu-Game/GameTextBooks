@@ -2,12 +2,12 @@
 初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。
 
 ## 目次
-1. [初めに](Jindex.html)
-2. [プロジェクト作成](JMakeProject.html)
-3. [画面遷移作成](Scene.html)
-4. [メニュー画面作成](Menu.html)
-5. [ゲーム画面作成](Game.html)
-6. [最後に](Final.html)
+1. [初めに](./1Jindex.html)
+2. [プロジェクト作成](./2JMakeProject.html)
+3. [画面遷移作成](./3Scene.html)
+4. [メニュー画面作成](./4Menu.html)
+5. [ゲーム画面作成](./5Game.html)
+6. [最後に](./6Final.html)
 ---
 ## 画面遷移とは
  画面遷移とはある画面から別の画面へ表示を切り替えること
@@ -29,24 +29,24 @@
  ```h
 #pragma once
 typedef enum {
-	eScene_Menu,	    //メニュー画面
-	eScene_Game,	    //ゲーム画面
+	eScene_Menu,	//メニュー画面
+	eScene_Game,	//ゲーム画面
 	eScene_Config,	//設定画面
-	eScene_None,	    //無し
+	eScene_None,	//無し
 } eScene;
 
-static class SceneMgr {
-public:
-	//画面サイズの大きさ
+struct SceneMgr {
 	const int SCREEN_WIDTH = 640;
 	const int SCREEN_HEIGHT = 480;
-	//背景画像
-	int BackImage;
-}mgr;
+	const int SCREEN_CHIP = 32;
+	int BackImg;
+};
+
+extern struct SceneMgr mgr;
 
 void SceneMgr_Initialize();	//初期化
 void SceneMgr_Finalize();	//終了処理
-void SceneMgr_Update();	    //更新
+void SceneMgr_Update();		//更新
 void SceneMgr_Draw();		//描画
 
 // 引数 nextSceneにシーンを変更する
@@ -70,6 +70,9 @@ static eScene mNextScene = eScene_None; //次のシーン管理変数
 
 static void SceneMgr_InitializeModule(eScene scene);//指定モジュールを初期化する
 static void SceneMgr_FinalizeModule(eScene scene);	//指定モジュールの終了処理を行う
+
+struct SceneMgr mgr;
+
 /******************************
 * 初期化処理
 *******************************/
@@ -172,20 +175,24 @@ typedef enum {
     eScene_None,   // 無し
 } eScene;
 ```
-列挙型でプロジェクトのシーンを管理
+列挙型でプロジェクトのシーンを管理<br>
+プロジェクト全体が現在何の画面（状態）か管理
 
 ```h
-static class SceneMgr {
-public:
-	//画面サイズの大きさ
+struct SceneMgr {
 	const int SCREEN_WIDTH = 640;
 	const int SCREEN_HEIGHT = 480;
-	//背景画像
-	int BackImage;
-}mgr;
+	const int SCREEN_CHIP = 32;
+	int BackImg;
+};
 ```
-SceneMgrのクラスを作成<br>
-**※** staticで作ることで**メモリに保存**
+SceneMgrの情報を作成<br>
+`const` をつけることで呼び出し時に編集不可にする  
+
+```h
+extern struct SceneMgr mgr;
+```
+宣言したSceneMgrの情報を呼び出す際の名前を`mgr`にする
 
 ```h
  void SceneMgr_Initialize();	//初期化
@@ -208,7 +215,8 @@ void SceneMgr_ChangeScene(eScene nextScene);
 次シーンに遷移する処理
 - 例）メニュー画面からゲーム画面に移動
 
-  ### SceneMgr.cpp
+
+### SceneMgr.cpp
    ```cpp
     static eScene mScene = eScene_Menu;
     static eScene mNextScene = eScene_None; 
@@ -217,13 +225,17 @@ void SceneMgr_ChangeScene(eScene nextScene);
    ヘッダーファイルで作成したシーン要素（列挙型）を現在と次シーンの変数として作成
 
    ```cpp
+   struct SceneMgr mgr;
+   ```
+   ヘッダーファイルで作成したSceneMgrの情報をcppファイルでも読めるように宣言
+   ```cpp
     void SceneMgr_Update() {
-    if (mNextScene != eScene_None) {
-   	 SceneMgr_FinalizeModule(mScene);
-   	 mScene = mNextScene;
-   	 mNextScene = eScene_None;
-   	 SceneMgr_InitializeModule(mScene);
-    }
+		if (mNextScene != eScene_None) {
+		SceneMgr_FinalizeModule(mScene);
+		mScene = mNextScene;
+		mNextScene = eScene_None;
+		SceneMgr_InitializeModule(mScene);
+		}
    ```
    次シーンがあるのであれば現在シーンを削除して現在シーンを次シーンに移動
 
@@ -246,7 +258,7 @@ void SceneMgr_ChangeScene(eScene nextScene);
     	mNextScene = NextScene;
     }
    ```
-    現在シーンから次シーンに変更したいときに使用
+   現在シーンから次シーンに変更したいときに使用
 
    ```cpp
 	switch(scene) { 
@@ -260,7 +272,7 @@ void SceneMgr_ChangeScene(eScene nextScene);
    ```
 
    現在シーンによって処理を働かせる
-    - 現在シーン(scene)がメニュー画面だったらcase eScene_Menuに入る
+- 現在シーン(scene)がメニュー画面だったら`eScene_Menu`に入る
 
 ## main.cpp更新
 
@@ -269,13 +281,13 @@ void SceneMgr_ChangeScene(eScene nextScene);
 <details open><summary>main.cpp</summary>
 
  ```cpp
-  #include "DxLib.h"
+#include "DxLib.h"
 #include "SceneMgr.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	ChangeWindowMode(TRUE);	//ウィンドウモード変更
 	DxLib_Init();			//Dxライブラリ初期化
-	SetGraphMode(mgr.SCREEN_WIDTH, mgr.SCREEN_HEIGHT, 32);	//画面サイズ
+	SetGraphMode(mgr.SCREEN_WIDTH, mgr.SCREEN_HEIGHT, mgr.SCREEN_CHIP);	//画面サイズ
 	SetDrawScreen(DX_SCREEN_BACK);	//裏画面設定
 	SceneMgr_Initialize();	//初期シーン
 	while (ProcessMessage() == 0) {
@@ -292,7 +304,21 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	return 0;
 }
  ```
+ </details>
   SceneMgrで作成したシーン処理をmain.cppに追加
 
+  ```cpp
+  SetGraphMode(mgr.SCREEN_WIDTH, mgr.SCREEN_HEIGHT, mgr.SCREEN_CHIP);	//画面サイズ
+  ```
+  SceneMgrの情報として宣言した値で画面サイズに変更
+   | 変数名 | 値 |
+   | --- | --- |
+   | mgr.SCREEN_WIDTH | 640 |
+   | mgr.SCREEN_HEIGHT | 480 |
+   | mgr.SCREEN_CHIP | 32 |
 ---
-[戻る](../../index.html)
+[次へ](./4Menu.html)
+
+[前へ戻る](./2JMakeProject.html)
+
+[DxLib開発ページへ戻る](../Dindex.html)
