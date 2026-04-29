@@ -295,32 +295,32 @@ void PlayerHands() {
 手を決めたらランダム処理を止める
 
 ```cpp
- int ehand_Judge = mgame.eHand;
- if (ehand_Judge == 0) {
-    ehand_Judge = 3;
- }
- //あいこ
- if (mgame.pHand == mgame.eHand) {
-    mgame.judgenum = 0;
- }
- //勝ち
- else if (mgame.pHand == ehand_Judge - 1) {
-    mgame.judgenum = 1;
- }
- //負け
- else {
-    mgame.judgenum = 2;
- }
+int ehand_Judge = mp.eHand;
+if (ehand_Judge == 0) {
+	ehand_Judge = 3;
+}
+//あいこ
+if (mp.pHand == mp.eHand) {
+	mg.judgenum = 0;
+}
+//勝ち
+else if (mp.pHand == ehand_Judge - 1) {
+	mg.judgenum = 1;
+}
+//負け
+else {
+	mg.judgenum = 2;
+}
 ```
  1. 手の状態を計算するために格納
-     > int ehand_Judge = mgame.eHand;
+     > int ehand_Judge = mp.eHand;
  2. 手が同じだったらあいこ処理
-     > if (mgame.pHand == mgame.eHand) {
-	 >   mgame.judgenum = 0;
+     > if (mp.pHand == mp.eHand) {
+	 >   mg.judgenum = 0;
 	 > }
  3. 勝ちの処理
-     > else if (mgame.pHand == ehand_Judge - 1) {
-	 >	 mgame.judgenum = 1;
+     > else if (mp.pHand == ehand_Judge - 1) {
+	 >	 mg.judgenum = 1;
 	 > }
 
      | ehand_Judge | プレイヤー | 相手 |
@@ -330,13 +330,13 @@ void PlayerHands() {
      | 2 | ぱー | ぐー |
  4. 負けの処理
      > else {
-	 >  mgame.judgenum = 2;
+	 >  mg.judgenum = 2;
 	 > }
 
 ```cpp
 if (CheckHitKey(KEY_INPUT_SPACE) != 0) {
-    mgame.judgenum = 4;	
-    mgame.changeflg = true;
+    mg.judgenum = 4;	
+    mg.changeflg = true;
 }
 ```
 スペースキーを押したら再度ゲーム開始

@@ -338,42 +338,42 @@ void Game_Judge();		//勝敗処理
 </table>
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code> mgame<span class="token punctuation">.</span>changeflg <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 </code></pre><p>手を決めたらランダム処理を止める</p>
-<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code> <span class="token keyword keyword-int">int</span> ehand_Judge <span class="token operator">=</span> mgame<span class="token punctuation">.</span>eHand<span class="token punctuation">;</span>
- <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ehand_Judge <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ehand_Judge <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
- <span class="token comment">//あいこ</span>
- <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>mgame<span class="token punctuation">.</span>pHand <span class="token operator">==</span> mgame<span class="token punctuation">.</span>eHand<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    mgame<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
- <span class="token comment">//勝ち</span>
- <span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>mgame<span class="token punctuation">.</span>pHand <span class="token operator">==</span> ehand_Judge <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    mgame<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
- <span class="token comment">//負け</span>
- <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
-    mgame<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-int">int</span> ehand_Judge <span class="token operator">=</span> mp<span class="token punctuation">.</span>eHand<span class="token punctuation">;</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>ehand_Judge <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	ehand_Judge <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//あいこ</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>mp<span class="token punctuation">.</span>pHand <span class="token operator">==</span> mp<span class="token punctuation">.</span>eHand<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	mg<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//勝ち</span>
+<span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>mp<span class="token punctuation">.</span>pHand <span class="token operator">==</span> ehand_Judge <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	mg<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//負け</span>
+<span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+	mg<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre><ol>
 <li>
 <p>手の状態を計算するために格納</p>
 <blockquote>
-<p>int ehand_Judge = mgame.eHand;</p>
+<p>int ehand_Judge = mp.eHand;</p>
 </blockquote>
 </li>
 <li>
 <p>手が同じだったらあいこ処理</p>
 <blockquote>
-<p>if (mgame.pHand == mgame.eHand) {<br>
-mgame.judgenum = 0;<br>
+<p>if (mp.pHand == mp.eHand) {<br>
+mg.judgenum = 0;<br>
 }</p>
 </blockquote>
 </li>
 <li>
 <p>勝ちの処理</p>
 <blockquote>
-<p>else if (mgame.pHand == ehand_Judge - 1) {<br>
-mgame.judgenum = 1;<br>
+<p>else if (mp.pHand == ehand_Judge - 1) {<br>
+mg.judgenum = 1;<br>
 }</p>
 </blockquote>
 <table>
@@ -407,14 +407,14 @@ mgame.judgenum = 1;<br>
 <p>負けの処理</p>
 <blockquote>
 <p>else {<br>
-mgame.judgenum = 2;<br>
+mg.judgenum = 2;<br>
 }</p>
 </blockquote>
 </li>
 </ol>
 <pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token function">CheckHitKey</span><span class="token punctuation">(</span>KEY_INPUT_SPACE<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    mgame<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>	
-    mgame<span class="token punctuation">.</span>changeflg <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    mg<span class="token punctuation">.</span>judgenum <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>	
+    mg<span class="token punctuation">.</span>changeflg <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><p>スペースキーを押したら再度ゲーム開始</p>
 <h3 id="scenemgrcpp更新">SceneMgr.cpp更新 </h3>
