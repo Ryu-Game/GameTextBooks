@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>3DMakeProject</title>
+      <title>1index</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -26,77 +26,30 @@
     <body for="html-export">
       <div class="crossnote markdown-preview  ">
       
-<h1 id="dxlib開発環境づくり">DxLib開発環境づくり </h1>
-<p>DxLib開発するための必要なダウンロードや環境づくりを紹介</p>
-<h2>目次</h2>
+<h1 id="じゃんけんゲーム">じゃんけんゲーム </h1>
+<p>初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。</p>
+<h2 id="目次">目次 </h2>
 <ol>
-<li><a href="./1Ddownload.html">ダウンロード</a></li>
-<li><a href="./2Dcreate.html">開発環境反映</a></li>
-<li><a href="./3DMakeProject.html">プロジェクト環境づくり</a></li>
+<li><a href="./1index.html">初めに</a></li>
+<li><a href="./2Project.html">プロジェクト作成</a></li>
+<li><a href="./3Scene.html">画面遷移作成</a></li>
+<li><a href="./4Menu.html">メニュー画面作成</a></li>
+<li><a href="./5Game.html">ゲーム画面作成</a></li>
+<li><a href="./6Final.html">最後に</a></li>
 </ol>
 <hr>
-<h2>プロジェクト環境づくり</h2>
-<h3>1. プロジェクト作成</h3>
-<ol>
-<li>Visual Studioを起動</li>
-<li>新しいプロジェクトの作成</li>
-<li>空のプロジェクト(C++)を選択して次へ</li>
-<li>プロジェクト名、保存場所は自由</li>
-<li>作成</li>
-</ol>
-<h3>2. 構成プロパティ</h3>
-<ol>
-<li>ソースファイルを右クリック</li>
-<li>追加→新しい項目を追加</li>
-<li>C++を選択</li>
-<li>ファイル名<code>main.cpp</code></li>
-<li>作成</li>
-<li>作成したファイルを選択状態でプロジェクトを選択</li>
-<li>プロパティを表示</li>
-</ol>
-<h3>3. DxLib反映</h3>
-<ol>
-<li>構成、プラットフォーム変更
-<ul>
-<li>構成「すべての構成」</li>
-<li>プラットフォーム「すべてのプラットフォーム」</li>
-</ul>
-</li>
-<li>詳細の文字セットを変更
-<ul>
-<li>マルチバイト文字セットを使用する</li>
-</ul>
-</li>
-<li>C/C++の<code>追加のインクルードディレクトリ</code>にDxLibファイル追加<blockquote>
-<p>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</p>
-</blockquote>
-</li>
-<li>同様に、リンカーの<code>追加のライブラリディレクトリ</code>にDxLibファイルを追加<blockquote>
-<p>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用</p>
-</blockquote>
-</li>
-<li>リンカーのシステムのサブシステムを変更
-<ul>
-<li>Windows（/SUBSYSTEM:WINDOWS）</li>
-</ul>
-</li>
-<li>構成をDebugに変更</li>
-<li>C/C++のコード生成のランタイムライブラリを変更
-<ul>
-<li>マルチスレッドデバッグ（/MTd）</li>
-</ul>
-</li>
-<li>構成をReleaseに変更</li>
-<li>C/C++のコード生成のランタイムライブラリを変更
-<ul>
-<li>マルチスレッド（/MT）</li>
-</ul>
-</li>
-<li>完成</li>
-</ol>
+<h2 id="完成動画">完成動画 </h2>
+<video controls="" width="400">
+  <source src="../Janken/Movie/Janken.mp4" type="video/mp4">
+</video>
+<h2 id="画像">画像 </h2>
+<p>プロジェクト作成するにあたって使用する画像<br><br>
+<a href="./素材.zip" download="素材ファイル">素材ダウンロード<br></a></p><a href="./素材.zip" download="素材ファイル">
+<img src="./images/janken.png" width="50%">
+<img src="./images/MenuBack.png" width="50%">
 <hr>
-<p><a href="./2Dcreate.html">戻る</a></p>
-<p><a href="../Dindex.html">DxLib開発ページへ戻る</a></p>
+</a><p><a href="./素材.zip" download="素材ファイル"></a><a href="./2Project.html">次へ</a></p>
+<p><a href="../index.html">DxLib開発ページへ戻る</a></p>
 
       </div>
       

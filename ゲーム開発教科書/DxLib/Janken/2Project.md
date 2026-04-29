@@ -2,8 +2,8 @@
 初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。
 
 ## 目次
-1. [初めに](./1Jindex.html)
-2. [プロジェクト作成](./2JMakeProject.html)
+1. [初めに](./1index.html)
+2. [プロジェクト作成](./2Project.html)
 3. [画面遷移作成](./3Scene.html)
 4. [メニュー画面作成](./4Menu.html)
 5. [ゲーム画面作成](./5Game.html)
@@ -13,7 +13,7 @@
 ## プロジェクト作成
 1. VisualStudioでプロジェクトを作成
 2. プロジェクト名`Janken`
-   - [作成方法ページ](../MakeProject/3DMakeProject.html)
+   - [作成方法ページ](../MakeProject/3Project.html)
 
 ## コーディング
 ### main.cpp
@@ -87,6 +87,6 @@ DxLibソフトの初期化<br>
 ---
 [次へ](./3Scene.html)
 
-[前へ戻る](./1Jindex.html)
+[前へ戻る](./1index.html)
 
-[DxLib開発ページへ戻る](../Dindex.html)
+[DxLib開発ページへ戻る](../index.html)

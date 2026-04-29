@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>1Jindex</title>
+      <title>2Project</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -30,26 +30,94 @@
 <p>初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。</p>
 <h2 id="目次">目次 </h2>
 <ol>
-<li><a href="./1Jindex.html">初めに</a></li>
-<li><a href="./2JMakeProject.html">プロジェクト作成</a></li>
+<li><a href="./1index.html">初めに</a></li>
+<li><a href="./2Project.html">プロジェクト作成</a></li>
 <li><a href="./3Scene.html">画面遷移作成</a></li>
 <li><a href="./4Menu.html">メニュー画面作成</a></li>
 <li><a href="./5Game.html">ゲーム画面作成</a></li>
 <li><a href="./6Final.html">最後に</a></li>
 </ol>
 <hr>
-<h2 id="完成動画">完成動画 </h2>
-<video controls="" width="400">
-  <source src="../Janken/Movie/Janken.mp4" type="video/mp4">
-</video>
-<h2 id="画像">画像 </h2>
-<p>プロジェクト作成するにあたって使用する画像<br><br>
-<a href="./素材.zip" download="素材ファイル">素材ダウンロード<br></a></p><a href="./素材.zip" download="素材ファイル">
-<img src="./images/janken.png" width="50%">
-<img src="./images/MenuBack.png" width="50%">
+<h2 id="プロジェクト作成">プロジェクト作成 </h2>
+<ol>
+<li>VisualStudioでプロジェクトを作成</li>
+<li>プロジェクト名<code>Janken</code>
+<ul>
+<li><a href="../MakeProject/3Project.html">作成方法ページ</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="コーディング">コーディング </h2>
+<h3 id="maincpp">main.cpp </h3>
+ <details open=""><summary>main.cpp</summary>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"DxLib.h"</span></span>
+<span class="token keyword keyword-int">int</span> WINAPI <span class="token function">WinMain</span><span class="token punctuation">(</span>HINSTANCE<span class="token punctuation">,</span> HINSTANCE<span class="token punctuation">,</span> LPSTR<span class="token punctuation">,</span> <span class="token keyword keyword-int">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token function">ChangeWindowMode</span><span class="token punctuation">(</span>TRUE<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//ウィンドウモード変更</span>
+   <span class="token function">DxLib_Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//Dxライブラリ初期化</span>
+   <span class="token function">SetGraphMode</span><span class="token punctuation">(</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token number">480</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//画面サイズ</span>
+   <span class="token function">SetDrawScreen</span><span class="token punctuation">(</span>DX_SCREEN_BACK<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//裏画面設定</span>
+   <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span><span class="token function">ProcessMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   	<span class="token function">ClearDrawScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//画面初期化</span>
+
+   	<span class="token function">ScreenFlip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//画面更新</span>
+   <span class="token punctuation">}</span>
+   <span class="token function">DxLib_End</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword keyword-return">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> </details>
+<h2>コード説明</h2>
+<h3>main.cpp</h3>
+<blockquote>
+<p>#include "DxLib.h"</p>
+</blockquote>
+<p>#include をすることで別ファイルで宣言した内容を使えるようにする。</p>
+<blockquote>
+<p>int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {</p>
+</blockquote>
+<p>一般的なmain処理の書き方<br><br>
+<strong>※</strong> C++言語は基本的にmain処理から始まるのでmain.cppから始まります。</p>
+<blockquote>
+<p>ChangeWindowMode(TRUE);</p>
+</blockquote>
+<ul>
+<li>TRUE：<code>ウィンドウモード</code></li>
+<li>FALSE：<code>フルスクリーンモード</code></li>
+</ul>
+<blockquote>
+<p>DxLib_Init();	//Dxライブラリ初期化</p>
+</blockquote>
+<p>DxLibソフトの初期化<br><br>
+<strong>※</strong> DxLibを使用する際この処理をはじめに行う必要がある</p>
+<blockquote>
+<p>SetGraphMode(640, 480, 32);	//画面サイズ</p>
+</blockquote>
+<p>ウィンドウ画面のサイズを設定<br><br>
+<code>SetGraphMode(横サイズ, 縦サイズ, ビット数)</code></p>
+<blockquote>
+<p>SetDrawScreen(DX_SCREEN_BACK);	//裏画面設定</p>
+</blockquote>
+<p>描画を裏画面に設定<br><br>
+<strong>※</strong> 表画面で常に描画し続けると描画されているものが<span style="color: red; ">チラつきゲームとして見づらい</span></p>
+<blockquote>
+<p>while (ProcessMessage() == 0) {</p>
+</blockquote>
+<p>正常処理中は常に動かし続ける</p>
+<blockquote>
+<p>ClearDrawScreen();		//画面初期化</p>
+</blockquote>
+<p>現在描画されているものを削除</p>
+<blockquote>
+<p>ScreenFlip();			//画面更新</p>
+</blockquote>
+<p>裏画面に描画したものを表画面に描画</p>
+<blockquote>
+<p>DxLib_End();</p>
+</blockquote>
+<p>ゲーム強制終了処理</p>
 <hr>
-</a><p><a href="./素材.zip" download="素材ファイル"></a><a href="./2JMakeProject.html">次へ</a></p>
-<p><a href="../Dindex.html">DxLib開発ページへ戻る</a></p>
+<p><a href="./3Scene.html">次へ</a></p>
+<p><a href="./1index.html">前へ戻る</a></p>
+<p><a href="../index.html">DxLib開発ページへ戻る</a></p>
 
       </div>
       

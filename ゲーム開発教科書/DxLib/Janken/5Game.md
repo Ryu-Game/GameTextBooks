@@ -2,8 +2,8 @@
 初心者向けで1～2時間想定の簡単なじゃんけんゲームの作り方をご紹介します。
 
 ## 目次
-1. [初めに](./1Jindex.html)
-2. [プロジェクト作成](./2JMakeProject.html)
+1. [初めに](./1index.html)
+2. [プロジェクト作成](./2Project.html)
 3. [画面遷移作成](./3Scene.html)
 4. [メニュー画面作成](./4Menu.html)
 5. [ゲーム画面作成](./5Game.html)
@@ -458,4 +458,4 @@ static void SceneMgr_FinalizeModule(eScene scene) {
 
 [前へ戻る](./4Menu.html)
 
-[DxLib開発ページへ戻る](../Dindex.html)
+[DxLib開発ページへ戻る](../index.html)

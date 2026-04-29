@@ -8,7 +8,7 @@
   
   ### Unity開発ゲーム集
    Unityで制作したゲームを下記のページから確認<br>
-   - [Unityゲーム集](Unity/Uindex.html)
+   - [Unityゲーム集](Unity/index.html)
 
  ## DxLib開発
   Windowsでゲーム開発を行うゲームエンジン<br>
@@ -17,4 +17,4 @@
 
   ### DxLib開発ゲーム集
    DxLibで制作したゲームを下記のページから確認<br>
-   - [DxLibゲーム集](DxLib/Dindex.html)
+   - [DxLibゲーム集](DxLib/index.html)

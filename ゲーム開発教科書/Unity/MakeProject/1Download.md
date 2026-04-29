@@ -2,10 +2,10 @@
  Unity開発するための必要なダウンロードや環境づくりを紹介
 
  ## 目次
-  1. [ダウンロード](./1Udownload.html)
-  2. [開発環境反映](./2Ucreate.html)
-  3. [プロジェクト環境づくり](./3UMakeProject.html)
-  4. [Unity画面説明](./4Uwindow.html)
+  1. [ダウンロード](./1Download.html)
+  2. [開発環境反映](./2Environ.html)
+  3. [プロジェクト環境づくり](./3Project.html)
+  4. [Unity画面説明](./4Window.html)
 ---
 
  ## ダウンロード
@@ -20,7 +20,7 @@
    - [Unityアーカイブ](https://unity.com/ja/releases/editor/archive)
   
 ---
-[次へ](./2Ucreate.html)
+[次へ](./2Environ.html)
 
-[Unity開発ページへ戻る](../Uindex.html)
+[Unity開発ページへ戻る](../index.html)
 

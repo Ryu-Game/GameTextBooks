@@ -2,9 +2,9 @@
  DxLib開発するための必要なダウンロードや環境づくりを紹介
 
  ## 目次
-  1. [ダウンロード](./1Ddownload.html)
-  2. [開発環境反映](./2Dcreate.html)
-  3. [プロジェクト環境づくり](./3DMakeProject.html)
+  1. [ダウンロード](./1Download.html)
+  2. [開発環境反映](./2Environ.html)
+  3. [プロジェクト環境づくり](./3Project.html)
 
  ---
 
@@ -24,7 +24,7 @@
    - [VisualStudioアーカイブ](https://visualstudio.microsoft.com/ja/vs/older-downloads/)
   
 ---
-[次へ](./2Dcreate.html)
+[次へ](./2Environ.html)
 
-[DxLib開発ページへ戻る](../Dindex.html)
+[DxLib開発ページへ戻る](../index.html)
 
