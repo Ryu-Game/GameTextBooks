@@ -92,7 +92,7 @@ public class PlayerScript : MonoBehaviour
     }
 }
  ```
- - LifeText.textで現在のPlayer残機を描画させる
+ - 現在のPlayer残機をゲーム画面上に描画
  - Player残機が0以下になるとゲームオーバー処理
 
  ```cs
@@ -108,6 +108,25 @@ public class PlayerScript : MonoBehaviour
  - Playerがタグ名`Enemy`と衝突したらPlayer残機を減らして、衝突したEnemyオブジェクトを削除
 
  ### Player残機数UI
+ ゲーム画面上にPlayerの残機数をTextで描画
+   1. Hierarchy画面で右クリックしてUIの`Panel`を選択
+   2. 生成後、Inspector画面でImageのColorの透明度を0に設定
+   3. 生成したPanelを選択して右クリックUIの`Text - TextMeshPro`を選択
+    ※TextMeshProダウンロード画面が出たら
+      - 名前を`Life`に設定
+   1. Game画面を見ながらInspector画面で位置と大きさを調整
+    ※文字の大きさは`FontSize`で調整
+   2. Hierarchy画面でPlayerArmatureを選択
+   3. Inspector画面でAdd ComponentでPlayerScriptを追加
+   4. 追加したPlayerScriptに3で作成したTextをLife Textにドラッグ＆ドロップ
+    <img src="./images/Text設定.png" width="75%">
+ 
+ ### 実行
+ 完了したら鬼キャラにPlayerキャラがライフが減るか確認
+ 
+---
+[次へ](./2Project.html)
 
+[前へ戻る](./3Ghost.html)
 
-
+[Unity開発ページへ戻る](../index.html)

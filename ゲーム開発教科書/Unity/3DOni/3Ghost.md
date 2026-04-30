@@ -99,14 +99,18 @@ public class EnemyMove : MonoBehaviour
   - LookAt(傾け先対象オブジェクト)
 
  ### タグの追加
- Playerオブジェクトのタグを`Player`に変更
+ 1. Playerオブジェクトのタグを`Player`に変更
  <img src="./images/タグ追加.png" width="75%">
- タグにPlayerがいない場合`Add Tag...`で追加
+    - タグにPlayerがいない場合`Add Tag...`で追加
+ 2. PrefabのGhostも`Enemy`とタグを変更
 
  ### 実行
- 完了したら下記の`再生マーク`もしくは`Ctr + P`を押してゲームを実行<br>
+ 1. Scene画面上にPrefabのGhostを好きな数、好きな場所に設置
+  ※Ghostを選択状態で、Scene画面の設置したい場所にドラッグ＆ドロップ
+ 2. 完了したら下記の`再生マーク`もしくは`Ctr + P`を押してゲームを実行
+  <img src="./images/再生.png" width="60%">
  GhostがPlayerを追いかけているか確認
- <img src="./images/再生.png" width="60%">
+ 
 
 ---
 [次へ](./2Project.html)

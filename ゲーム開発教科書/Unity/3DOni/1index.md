@@ -6,8 +6,8 @@
 2. [プロジェクト作成](./2Project.html)
 3. [鬼の追加](./3Ghost.html)
 4. [Player残機追加](./4Lives.html)
-5. [ゲーム画面作成](./5Game.html)
-6. [最後に](./6Final.html)
+5. [ゲーム時間追加](./5Timer.html)
+6. [画面遷移](./6Scene.html)
 ---
 ## 完成動画
 <video controls width="400">
