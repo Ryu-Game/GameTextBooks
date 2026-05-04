@@ -11,12 +11,15 @@
 7. [ゲーム勝敗処理](./7GameEnd.html)
 8. [最後に](./8Final.html)
 ---
-## 完成動画
-<video controls width="400">
-  <source src="./Movie/完成.mp4" type="video/mp4">
-</video>
+### 完成
+ここまで作成したらタイトル画面から開始してゲームの確認
+
+### 最後に
+本スレッドは初心者向けなのでただ動かすだけであまり要素を追加していません。<br>
+これを機会にもっと面白いゲームを作りたいと思ってくれたら、Youtubeや有料コンテンツUdemyをみて作ってくれたらうれしいです。
+
 
 ---
-[次へ](./2Project.html)
+[前へ戻る](./7GameEnd.html)
 
 [Unity開発ページへ戻る](../index.html)

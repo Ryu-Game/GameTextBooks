@@ -3,11 +3,13 @@
 
 ## 目次
 1. [初めに](./1index.html)
-2. [プロジェクト作成](./2MakeProject.html)
-3. [画面遷移作成](./3Scene.html)
-4. [メニュー画面作成](./4Menu.html)
-5. [ゲーム画面作成](./5Game.html)
-6. [最後に](./6Final.html)
+2. [プロジェクト作成](./2Project.html)
+3. [鬼の追加](./3Ghost.html)
+4. [Player残機追加](./4Lives.html)
+5. [ゲーム時間追加](./5Timer.html)
+6. [画面遷移](./6Scene.html)
+7. [ゲーム勝敗処理](./7GameEnd.html)
+8. [最後に](./8Final.html)
 ---
 
 ## プロジェクト作成
@@ -24,3 +26,10 @@
   2. Unityで開くをクリック（アセットを追加）
   3. 警告の`Unity Editorを開く`を選択
   4. Inportを選択してプロジェクトに追加
+
+---
+[次へ](./1index.html)
+
+[前へ戻る](./3Ghost.html)
+
+[Unity開発ページへ戻る](../index.html)

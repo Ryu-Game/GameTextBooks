@@ -4,10 +4,12 @@
 ## 目次
 1. [初めに](./1index.html)
 2. [プロジェクト作成](./2Project.html)
-3. [鬼設定](./3Ghost.html)
-4. [メニュー画面作成](./4Menu.html)
-5. [ゲーム画面作成](./5Game.html)
-6. [最後に](./6Final.html)
+3. [鬼の追加](./3Ghost.html)
+4. [Player残機追加](./4Lives.html)
+5. [ゲーム時間追加](./5Timer.html)
+6. [画面遷移](./6Scene.html)
+7. [ゲーム勝敗処理](./7GameEnd.html)
+8. [最後に](./8Final.html)
 ---
 
 ## 鬼設定
@@ -113,7 +115,7 @@ public class EnemyMove : MonoBehaviour
  
 
 ---
-[次へ](./2Project.html)
+[次へ](./4Lives.html)
 
 [前へ戻る](./2Project.html)
 

@@ -8,6 +8,8 @@
 4. [Player残機追加](./4Lives.html)
 5. [ゲーム時間追加](./5Timer.html)
 6. [画面遷移](./6Scene.html)
+7. [ゲーム勝敗処理](./7GameEnd.html)
+8. [最後に](./8Final.html)
 ---
 ## 画面遷移
  ### ゲームシーンを追加
@@ -136,7 +138,7 @@ public class ButtonScript : MonoBehaviour
   - StartGameボタン：ゲーム画面
 
 ---
-[次へ](./2Project.html)
+[次へ](./7GameEnd.html)
 
 [前へ戻る](./5Timer.html)
 
