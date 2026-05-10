@@ -28,8 +28,8 @@
   4. Inportを選択してプロジェクトに追加
 
 ---
-[次へ](./1index.html)
+[次へ](./3Ghost.html)
 
-[前へ戻る](./3Ghost.html)
+[前へ戻る](./1index.html)
 
 [Unity開発ページへ戻る](../index.html)
