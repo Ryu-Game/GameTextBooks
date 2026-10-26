@@ -14,9 +14,11 @@
   <source src="../Janken/Movie/Janken.mp4" type="video/mp4">
 </video>
 
-## 画像
-プロジェクト作成するにあたって使用する画像<br>
-<a href="./素材.zip" download="素材ファイル">素材ダウンロード<br>
+## ダウンロード
+ - プロジェクト設定完了ファイル<br>
+  <a href = "../設定完成ファイル.zip" download="プロジェクトファイル">プロジェクトファイルダウンロード</a><br>
+ - プロジェクト作成するにあたって使用する画像<br>
+  <a href="./素材.zip" download="素材ファイル">素材ダウンロード</a><br>
 
 <img src="./images/janken.png" width="50%">
 <img src="./images/MenuBack.png" width="50%">
