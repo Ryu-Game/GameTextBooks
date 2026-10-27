@@ -20,9 +20,6 @@
  - プロジェクト作成するにあたって使用する画像<br>
   <a href="./素材.zip" download="素材ファイル">素材ダウンロード</a><br>
 
-<img src="./images/janken.png" width="50%">
-<img src="./images/MenuBack.png" width="50%">
-
 ---
 [次へ](./2Project.html)
 
