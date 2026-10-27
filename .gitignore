@@ -1,0 +1,29 @@
+# OSの不要ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ・IDEの設定
+.vscode/
+.idea/
+
+# 一時ファイル・バックアップファイル
+*.tmp
+*.temp
+*.bak
+*~
+
+# ログファイル
+*.log
+
+# Node.jsを使用する場合
+node_modules/
+
+# ビルド・生成ファイル
+dist/
+build/
+
+# 環境設定ファイル（秘密情報を含む場合）
+.env
+.env.local
+.env.*.local
